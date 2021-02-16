@@ -4,4 +4,5 @@
     <string name="permdesc_writeExamProvider">permdesc_writeExamProvider</string>
     <string name="permlab_readExamProvider">permlab_readExamProvider</string>
     <string name="permlab_writeExamProvider">permlab_writeExamProvider</string>
+    <string name="empty">empty</string>
 </resources>

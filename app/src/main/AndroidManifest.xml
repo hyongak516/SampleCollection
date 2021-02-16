@@ -2,17 +2,20 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.samplecollection">
 
-    <permission android:name="com.example.samplecollection.permission.READ_PROVIDER"
-        android:permissionGroup="android.permission-group.SYSTEM_TOOLS"
-        android:protectionLevel="normal"
-        android:label="@string/permlab_readExamProvider"
-        android:description="@string/permdesc_readExamProvider" />
-    <permission android:name="com.example.samplecollection.permission.WRITE_PROVIDER"
-        android:permissionGroup="android.permission-group.SYSTEM_TOOLS"
-        android:protectionLevel="normal"
-        android:label="@string/permlab_writeExamProvider"
-        android:description="@string/permdesc_writeExamProvider" />
+    <uses-permission android:name="android.permission.INTERNET" />
 
+    <permission
+        android:name="com.example.samplecollection.permission.READ_PROVIDER"
+        android:description="@string/permdesc_readExamProvider"
+        android:label="@string/permlab_readExamProvider"
+        android:permissionGroup="android.permission-group.SYSTEM_TOOLS"
+        android:protectionLevel="normal" />
+    <permission
+        android:name="com.example.samplecollection.permission.WRITE_PROVIDER"
+        android:description="@string/permdesc_writeExamProvider"
+        android:label="@string/permlab_writeExamProvider"
+        android:permissionGroup="android.permission-group.SYSTEM_TOOLS"
+        android:protectionLevel="normal" />
 
     <application
         android:allowBackup="true"
@@ -21,6 +24,28 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.SampleCollection">
+        <activity android:name=".RecyclerActivity"
+            android:label="RecyclerActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".ThreadActivity"
+            android:label="ThreadActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".RestAPIActivity"
+            android:label="RestAPIActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+               <category android:name="android.intent.category.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".ProviderExamActivity"
             android:label="ProviderExamActivity">
@@ -43,11 +68,24 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <provider android:name="com.example.samplecollection.ExamProvider"
-            android:exported="true"
-            android:authorities="com.example.samplecollection.ExamProvider"
-            android:readPermission="com.example.samplecollection.permission.READ_PROVIDER"
-            android:writePermission="com.example.samplecollection.permission.WRITE_PROVIDER"/>
+        <activity
+            android:name=".PhoneBookDBActivity"
+            android:label="PhoneBookDB">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
 
+        <provider
+            android:name=".ExamProvider"
+            android:authorities="com.example.samplecollection.ExamProvider"
+            android:exported="true"
+            android:readPermission="com.example.samplecollection.permission.READ_PROVIDER"
+            android:writePermission="com.example.samplecollection.permission.WRITE_PROVIDER" />
+        <provider
+            android:name=".PhoneBookProvider"
+            android:authorities="com.example.samplecollection.phonebookprovider" />
     </application>
+
 </manifest>
