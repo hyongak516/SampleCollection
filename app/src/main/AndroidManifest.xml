@@ -2,21 +2,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.samplecollection">
 
-    <uses-permission android:name="android.permission.INTERNET" />
-
-    <permission
-        android:name="com.example.samplecollection.permission.READ_PROVIDER"
-        android:description="@string/permdesc_readExamProvider"
-        android:label="@string/permlab_readExamProvider"
-        android:permissionGroup="android.permission-group.SYSTEM_TOOLS"
-        android:protectionLevel="normal" />
-    <permission
-        android:name="com.example.samplecollection.permission.WRITE_PROVIDER"
-        android:description="@string/permdesc_writeExamProvider"
-        android:label="@string/permlab_writeExamProvider"
-        android:permissionGroup="android.permission-group.SYSTEM_TOOLS"
-        android:protectionLevel="normal" />
-
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -24,14 +9,23 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.SampleCollection">
-        <activity android:name=".RecyclerActivity"
+        <activity android:name=".EnumActivity"
+            android:label="EnumActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".RecyclerActivity"
             android:label="RecyclerActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.SAMPLE_CODE" />
             </intent-filter>
         </activity>
-        <activity android:name=".ThreadActivity"
+        <activity
+            android:name=".ThreadActivity"
             android:label="ThreadActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -43,7 +37,7 @@
             android:label="RestAPIActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-               <category android:name="android.intent.category.SAMPLE_CODE" />
+                <category android:name="android.intent.category.SAMPLE_CODE" />
             </intent-filter>
         </activity>
         <activity
@@ -87,5 +81,20 @@
             android:name=".PhoneBookProvider"
             android:authorities="com.example.samplecollection.phonebookprovider" />
     </application>
+
+    <permission
+        android:name="com.example.samplecollection.permission.WRITE_PROVIDER"
+        android:description="@string/permdesc_writeExamProvider"
+        android:label="@string/permlab_writeExamProvider"
+        android:permissionGroup="android.permission-group.SYSTEM_TOOLS"
+        android:protectionLevel="normal" />
+    <permission
+        android:name="com.example.samplecollection.permission.READ_PROVIDER"
+        android:description="@string/permdesc_readExamProvider"
+        android:label="@string/permlab_readExamProvider"
+        android:permissionGroup="android.permission-group.SYSTEM_TOOLS"
+        android:protectionLevel="normal" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
 
 </manifest>
